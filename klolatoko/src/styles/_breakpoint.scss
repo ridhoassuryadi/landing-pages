@@ -1,0 +1,47 @@
+@mixin mq($point) {
+  @if $point == xxl {
+    @media (width >= 1400px) {
+      @content;
+    }
+  }
+
+  @if $point == xl {
+    @media (width >= 1200px) {
+      @content;
+    }
+  }
+
+  @if $point == lg {
+    @media (width >= 992px) {
+      @content;
+    }
+  }
+
+  @if $point == md {
+    @media (width >= 768px) {
+      @content;
+    }
+  }
+
+  @if $point == sm {
+    @media (width >= 576px) {
+      @content;
+    }
+  }
+}
+
+/* stylelint-disable */
+@include mq(xxl) {
+}
+
+@include mq(xl) {
+}
+
+@include mq(lg) {
+}
+
+@include mq(md) {
+}
+
+@include mq(sm) {
+}

@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <h1 class="title">Astro×Sass Starter Pack</h1>
+    <Card href="/" title="Title" body="body" />
+  </main>
+</Layout>
+
+<style lang="scss">
+  .title {
+    display: flex;
+    font-weight: 500;
+  }
+</style>

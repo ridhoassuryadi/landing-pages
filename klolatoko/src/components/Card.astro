@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<div class="card">
+  <a href={href}>
+    <h2 class="card-title">
+      {title}
+    </h2>
+    <p class="card-body">
+      {body}
+    </p>
+  </a>
+</div>
+
+<style lang="scss">
+  .card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 260px;
+    padding: 1rem;
+    color: #333;
+    background: #fff;
+    border: 1px solid #333;
+    border-radius: 18px;
+  }
+
+  .card-title {
+    font-size: 20px;
+
+    @include mq(lg) {
+      font-size: 30px;
+    }
+  }
+
+  .card-body {
+    font-size: 16px;
+
+    @include mq(lg) {
+      font-size: 18px;
+    }
+  }
+</style>
