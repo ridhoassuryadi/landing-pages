@@ -14,7 +14,7 @@
   .badge {
     @apply text-sm inline-block border mb-2 px-3 py-1 rounded-full border-primary text-primary bg-primary/10 leading-6;
     &-primary {
-      @apply bg-primary text-paragraph dark:text-paragraph text-sm font-medium;
+      @apply bg-primary dark:text-sm font-medium;
     }
   }
 }

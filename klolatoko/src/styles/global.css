@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.prose-styles {
+  @apply prose mx-auto prose-blockquote:border-l-white prose-a:text-accent-500 hover:prose-a:text-black prose-headings:font-normal prose-headings:text-black prose-pre:border prose-li:marker:text-accent-500 prose-headings:font-display text-zinc-500 prose-code:text-black prose-blockquote:text-black/70 max-w-3xl;
+}
+
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+  "liga" 1,
+  "calt" 1, /* Contextual Alternates */
+  "dlig" 1, /* Discretionary Ligatures */
+  "ss07" 1, /* fSquare punctuation */
+  "ss08" 1, /* Square quotes */
+  "zero" 1, /* Slashed zero */
+  "tnum" 1, /* Tabular numbers */
+    "cv03" 1, /* Open six */
+    "cv04" 1, /* Open nine */
+    "cv01" 1, /* Alternate one */
+    "cv09", /* Flat-top three */
+    "cv02" 1; /* Open 4 */
+}
+@supports (font-variation-settings: normal) {
+  /* Use variable font if supported */
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+
+:root {
+   --astro-code-color-text: theme('colors.accent.500');
+  --astro-code-color-background: theme('colors.zinc.50');
+  --astro-code-token-constant: theme('colors.zinc.800');
+  --astro-code-token-string: theme('colors.zinc.800');
+  --astro-code-token-comment: theme('colors.zinc.700');
+  --astro-code-token-keyword: theme('colors.zinc.600');
+  --astro-code-token-parameter: theme('colors.accent.500');
+  --astro-code-token-function: theme('colors.zinc.500');
+  --astro-code-token-string-expression: theme('colors.black');
+  --astro-code-token-punctuation: theme('colors.gray.200');
+  --astro-code-token-link: theme('colors.accent.300');
+}

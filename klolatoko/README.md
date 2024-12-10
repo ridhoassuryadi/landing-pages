@@ -1,45 +1,44 @@
-# 🚀 Astro × Sass Starter Template
+# Astro & Tailwind CSS Starter Kit by lexingtonthemes.com
 
-## Features
+## Template Integrations
+- @astrojs/tailwind - https://docs.astro.build/en/guides/integrations-guide/tailwind/
+- @astrojs/sitemap - https://docs.astro.build/en/guides/integrations-guide/sitemap/
+- @astrojs/mdx - https://docs.astro.build/en/guides/markdown-content/
+- @astrojs/rss - https://docs.astro.build/en/guides/rss/
+- @astrojs/prism - https://docs.astro.build/en/reference/api-reference/#prism-
 
-- Sass
-- ESLint（JavaScript解析）
-- StyleLint（CSS解析・整形）
-- Prettier（コード整形）
-- Husky（コミット時にESLint・Stylelint・Prettierを実行する）
+## Template Structure
 
-## Requirements
+Inside of your Astro project, you'll see the following folders and files:
 
-- Node.js 18
-
-## Getting started
-
-ローカル環境で次のコマンドを実行します。
-
-```shell
-git clone https://github.com/H-ymt/astro-sass-starter-pack.git my-app
-cd my-app
-pnpm install
+```
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-次のコマンドで開発環境を立ち上げます
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-```shell
-pnpm dev
-```
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-http://localhost:4321を開いて、プロジェクトを表示します。
+Any static assets, like images, can be placed in the `public/` directory.
 
 ## Commands
 
-各種コマンド
+All commands are run from the root of the project, from a terminal:
 
-| Command                    | Action                                           |
-| :------------------------- | :----------------------------------------------- |
-| `pnpm install`             | パッケージのインストール                         |
-| `pnpm run dev`             | `localhost:4321`で開発環境を立ち上げる 　 　　　 |
-| `pnpm run build`           | `dist/`にファイルをビルドする 　                 |
-| `pnpm run preview`         | ローカルでビルドをプレビューする 　　　　　      |
-| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
-| `pnpm prettier`            | Get help using the Astro CLI                     |
-| `pnpm eslint`              | Get help using the Astro CLI                     |
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
+
+## Want to learn more?
+
+Feel free to check Astros [documentation](https://docs.astro.build)

@@ -148,7 +148,7 @@ span {
         @apply mb-6;
       }
       &:before {
-        @apply w-7 h-7 text-paragraph dark:text-primary absolute  max-md:top-0 md:top-1/2 left-0 md:-translate-y-1/2 content-[url('../images/checkmark.svg')] dark:content-[url('../images/checkmark-dark.svg')];
+        @apply w-7 h-7 dark:text-primary absolute  max-md:top-0 md:top-1/2 left-0 md:-translate-y-1/2 content-[url('../images/checkmark.svg')] dark:content-[url('../images/checkmark-dark.svg')];
       }
     }
   }

@@ -1,18 +1,25 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import HeroTwo from "@/components/heros/HeroTwo.astro";
+import LogoCloudOne from "@/components/testimonials/LogoCloudOne.astro";
+import FeatureNine from "@/components/features/FeatureNine.astro";
+import FeatureSix from "@/components/features/FeatureSix.astro";
+import FeatureTwo from "@/components/features/FeatureTwo.astro";
+import FeatureSeven from "@/components/features/FeatureSeven.astro";
+import TestimonialOne from "@/components/testimonials/TestimonialOne.astro";
+import PricingThree from "@/components/pricing/PricingThree.astro";
+import FaqThree from "@/components/faqs/FaqThree.astro";
+import CtaThree from "@/components/ctas/CtaThree.astro";
 ---
-
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1 class="title">Astro×Sass Starter Pack</h1>
-    <Card href="/" title="Title" body="body" />
-  </main>
-</Layout>
-
-<style lang="scss">
-  .title {
-    display: flex;
-    font-weight: 500;
-  }
-</style>
+<BaseLayout>
+  <HeroTwo />
+  <LogoCloudOne />
+  <FeatureNine />
+  <FeatureSix />
+  <FeatureTwo />
+  <FeatureSeven />
+  <TestimonialOne />
+  <PricingThree />
+  <FaqThree />
+  <CtaThree />
+</BaseLayout>
