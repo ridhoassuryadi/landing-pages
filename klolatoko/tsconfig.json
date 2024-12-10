@@ -1,28 +1,20 @@
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-}
+ {
+    "compilerOptions": {
+      "strictNullChecks": true,
+      // Enable top-level await, and other modern ESM features.
+      "target": "ESNext",
+      "module": "ESNext",
+      // Enable node-style module resolution, for things like npm package imports.
+      "moduleResolution": "node",
+      // Enable JSON imports.
+      "resolveJsonModule": true,
+      // Enable stricter transpilation for better output.
+      "isolatedModules": true,
+      // Astro will directly run your TypeScript code, no transpilation needed.
+      "noEmit": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"]
+      }
+    }
+  }
