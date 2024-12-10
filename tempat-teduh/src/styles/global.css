@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --astro-code-color-text: theme('colors.black');
+  --astro-code-color-background: theme('colors.gray.200');
+  --astro-code-token-constant: theme('colors.gray.500');
+  --astro-code-token-string: theme('colors.gray.500');
+  --astro-code-token-comment: theme('colors.gray.400');
+  --astro-code-token-keyword: theme('colors.gray.700');
+  --astro-code-token-parameter: theme('colors.gray.900');
+  --astro-code-token-function: theme('colors.gray.600');
+  --astro-code-token-string-expression: theme('colors.gray.500');
+  --astro-code-token-punctuation: theme('colors.gray.500');
+  --astro-code-token-link: theme('colors.gray.800');
+}
+
+.prose-styles {
+  @apply max-w-3xl prose prose-p:text-gray-500 prose-headings:font-normal prose-img:aspect-video prose-a:text-gray-600 prose-a:underline-offset-4 prose-a:decoration-gray-600 prose-a:hover:decoration-gray-800 prose-code:bg-gray-100 prose-code:rounded-none prose-code:p-1 prose-pre:bg-gray-100 prose-pre:rounded-md prose-pre:p-2 prose-pre:overflow-x-auto prose-blockquote:border-l-4 prose-blockquote:border-gray-200 prose-blockquote:pl-4 prose-blockquote:ml-0 prose-hr:border-gray-200 prose-hr:my-6 prose-ol:list-decimal prose-ul:list-disc prose-li:font-normal ;
+}
+/* CSS */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+  "liga" 1,
+  "calt" 1, /* Contextual Alternates */
+  "dlig" 1, /* Discretionary Ligatures */
+  "ss07" 1, /* fSquare punctuation */
+  "ss08" 1, /* Square quotes */
+  "zero" 1, /* Slashed zero */
+  "tnum" 1, /* Tabular numbers */
+    "cv03" 1, /* Open six */
+    "cv04" 1, /* Open nine */
+    "cv01" 1, /* Alternate one */
+    "cv09", /* Flat-top three */
+    "cv02" 1; /* Open 4 */
+}
+@supports (font-variation-settings: normal) {
+  /* Use variable font if supported */
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
