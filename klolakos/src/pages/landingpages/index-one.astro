@@ -1,0 +1,27 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import HeroOne from "@/components/headers/HeroOne.astro";
+import LogoCloudOne from "@/components/testimonials/LogoCloudOne.astro";
+import FeatureSix from "@/components/features/FeatureSix.astro";
+import FeatureThree from "@/components/features/FeatureThree.astro";
+import FeatureEleven from "@/components/features/FeatureEleven.astro";
+import TestimonialsThree from "@/components/testimonials/TestimonialsThree.astro";
+import PricingOne from "@/components/pricing/PricingOne.astro";
+import FaqOne from "@/components/faqs/FaqOne.astro";
+import CtaOne from "@/components/cta/CtaOne.astro";
+const meta = {
+  title: "Landing 01",
+};
+---
+
+<BaseLayout meta={meta}>
+  <HeroOne />
+  <LogoCloudOne />
+  <FeatureThree />
+  <FeatureSix />
+  <FeatureEleven />
+  <TestimonialsThree />
+  <PricingOne />
+  <FaqOne />
+  <CtaOne />
+</BaseLayout>

@@ -1,0 +1,281 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <section >
+    <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center mt-12">
+          <div>
+            <img
+              class="inline-block object-cover rounded-full h-9 w-9"
+              src={frontmatter.image.url}
+              alt={frontmatter.image.alt}
+            />
+          </div>
+          <div class="ml-3">
+            <p class="text-base font-medium text-purple-900">
+              {frontmatter.position}
+            </p>
+            <p class="text-sm font-medium text-gray-500">
+              At {frontmatter.company}
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-4 mt-12 lg:grid-cols-3 lg:divide-x">
+          <div class="lg:pl-4 lg:border-l">
+            <p class="text-base font-medium text-purple-900">Location</p>
+            <span class="mt-2 text-sm text-gray-500">
+              {frontmatter.location}
+            </span>
+          </div>
+          <div class="lg:pl-4">
+            <p class="text-base font-medium text-purple-900">Type</p>
+            <span class="mt-2 text-sm text-gray-500"> {frontmatter.type} </span>
+          </div>
+          <div class="lg:pl-4">
+            <p class="text-base font-medium text-purple-900">Salary</p>
+            <span class="mt-2 text-sm text-gray-500">
+              {frontmatter.salary}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="relative w-full max-w-3xl mx-auto mt-12"
+        x-data="{
+      tabSelected: 1,
+      tabId: $id('tabs'),
+      tabButtonClicked(tabButton){
+          this.tabSelected = tabButton.id.replace(this.tabId + '-', '');
+          this.tabRepositionMarker(tabButton);
+      },
+      tabRepositionMarker(tabButton){
+          this.$refs.tabMarker.style.width=tabButton.offsetWidth + 'px';
+          this.$refs.tabMarker.style.height=tabButton.offsetHeight + 'px';
+          this.$refs.tabMarker.style.left=tabButton.offsetLeft + 'px';
+      },
+      tabContentActive(tabContent){
+          return this.tabSelected == tabContent.id.replace(this.tabId + '-content-', '');
+      }
+  }"
+        x-init="tabRepositionMarker($refs.tabButtons.firstElementChild);">
+        <div
+          class="relative inline-grid items-center justify-center w-full h-8 grid-cols-3 mx-auto mt-6 text-black border-b border-gray-300 select-none"
+          x-ref="tabButtons">
+          <button
+            class="relative z-20 inline-flex items-center w-full h-8 text-sm font-medium cursor-pointer ml-2transition-all whitespace-nowrap"
+            type="button"
+            :class="{ 'border-b-2 border-purple-500' : tabButtonActive($el) }"
+            :id="$id(tabId)"
+            @click="tabButtonClicked($el);"
+            id="tabs-1-1"
+            >Overview
+          </button>
+          <button
+            class="relative z-20 inline-flex w-full h-8 text-sm font-medium transition-all cursor-pointer items-centerml-2 whitespace-nowrap"
+            type="button"
+            :class="{ 'border-b-2 border-purple-500' : tabButtonActive($el) }"
+            :id="$id(tabId)"
+            @click="tabButtonClicked($el);"
+            id="tabs-1-2"
+            >Application form
+          </button>
+          <div
+            class="absolute left-0 z-10 w-1/2 h-full duration-300 ease-out"
+            x-ref="tabMarker"
+            style="width: 256px; height: 32px; left: 0px;">
+            <div class="w-12 h-full border-b-2 border-purple-500"></div>
+          </div>
+        </div>
+        <div class="relative flex items-center w-full mt-12">
+          <div
+            class="relative"
+            :id="$id(tabId + '-content')"
+            x-show="tabContentActive($el)"
+            id="tabs-1-content-1">
+            <div class="prose-styles">
+              <slot />
+            </div>
+          </div>
+          <div
+            class="relative w-full"
+            :id="$id(tabId + '-content')"
+            x-show="tabContentActive($el)"
+            id="tabs-1-content-2"
+            style="display: none;">
+            <div
+              class="relative items-center w-full"
+              style="">
+              <form class="w-full">
+                <div class="mt-4 space-y-6">
+                  <div>
+                    <label
+                      for="name"
+                      class="block mb-3 text-sm font-medium text-gray-600"
+                      >First name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="block w-full h-10 px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div class="col-span-full">
+                    <label
+                      for="email"
+                      class="block mb-3 text-sm font-medium text-gray-600"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="block w-full h-10 px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+                      placeholder="email@example.com"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="message"
+                      class="block mb-3 text-sm font-medium text-gray-600"
+                      >Cover letter</label
+                    >
+                    <textarea
+                      id="message"
+                      name="message"
+                      class="block w-full px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+                      placeholder="What are you working on?"
+                      rows="4"
+                    ></textarea>
+                  </div>
+                  <div>
+                    <label
+                      for="file-upload"
+                      class="block mb-3 text-sm font-medium text-gray-600"
+                      >Cover photo</label
+                    >
+                    <div
+                      class="flex justify-center px-6 py-12 border border-gray-400 border-dashed rounded-md">
+                      <div class="space-y-4 text-center">
+                        <div class="flex text-sm text-gray-400 items-center">
+                          <label
+                            for="file-upload"
+                            class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold transition-all bg-white border border-gray-300 rounded-lg cursor-pointer text-purple-600 hover:text-purple-500">
+                            <span>Upload a file</span>
+                            <input
+                              id="file-upload"
+                              name="file-upload"
+                              type="file"
+                              class="sr-only"
+                            />
+                          </label>
+                          <p class="pl-1">or drag and drop</p>
+                        </div>
+                        <p class="text-xs text-gray-400 ">
+                          PNG, JPG, GIF up to 10MB
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-span-full">
+                    <label
+                      for="portfolio"
+                      class="block mb-3 text-sm font-medium text-gray-600"
+                      >Portfolio</label
+                    >
+                    <input
+                      type="text"
+                      id="portfolio"
+                      name="portfolio"
+                      class="block w-full h-10 px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+                      placeholder="Your site"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="col-span-full">
+                    <label
+                      for="linkedin"
+                      class="block mb-3 text-sm font-medium text-gray-600"
+                      >Linkedin</label
+                    >
+                    <input
+                      type="text"
+                      id="linkedin"
+                      name="linkedin"
+                      class="block w-full h-10 px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+                      placeholder="Your link"
+                      autocomplete="off"
+                    />
+                  </div>
+
+                  <div class="col-span-full">
+                    <span class="block mb-3 text-sm font-medium text-gray-600"
+                      >Are you based in a US, EU, or equivalent timezone?</span
+                    >
+                    <!-- This section may need buttons replaced with radio inputs for accessibility -->
+                    <div class="inline-flex rounded-md shadow-sm">
+                      <!-- Example change for one button to a radio input, replicate for No option -->
+                      <input
+                        type="radio"
+                        id="timezoneYes"
+                        name="timezone"
+                        value="yes"
+                        class="sr-only"
+                      />
+                      <label
+                        for="timezoneYes"
+                        class="h-10 px-4 py-2 bg-white border border-gray-300 rounded-l-md cursor-pointer hover:bg-gray-50"
+                        >Yes</label
+                      >
+
+                      <input
+                        type="radio"
+                        id="timezoneNo"
+                        name="timezone"
+                        value="no"
+                        class="sr-only"
+                      />
+                      <label
+                        for="timezoneNo"
+                        class="h-10 px-4 py-2 bg-white border border-gray-300 -ml-px rounded-r-md cursor-pointer hover:bg-gray-50"
+                        >No</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-span-full">
+                    <label
+                      for="country"
+                      class="block mb-3 text-sm font-medium text-gray-600"
+                      >What country are you based in?</label
+                    >
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      class="block w-full h-10 px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+                      placeholder="Your country"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="flex flex-col mt-10 sm:flex-row">
+                    <button
+                      type="submit"
+                      class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-white transition-all rounded-lg bg-gradient-to-b from-purple-500 hover:to-purple-700 to-purple-600"
+                      >Submit application</button
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

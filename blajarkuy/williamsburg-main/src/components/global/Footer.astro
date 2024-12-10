@@ -1,0 +1,103 @@
+---
+const today = new Date();
+const mainNavigation = [
+  { text: "Overview", href: "/system/overview" },
+  { text: "Style Guide", href: "/systemstyleguide" },
+  { text: "License", href: "https://www.lexingtonthemes.com/legal/license" },
+  {
+    text: "Documentation",
+    href: "https://www.lexingtonthemes.com/documentation",
+  },
+  { text: "More Themes", href: "https://lexingtonthemes.com/" },
+  { text: "Lexington on X", href: "https://x.com/lexingtonthemes" },
+  // Add more items as needed
+];
+const otherNavigation = [
+  { text: "Landing One", href: "/" },
+  { text: "Landing two", href: "/store/home" },
+  { text: "Landing three", href: "/store/home-three" },
+  { text: "Product details", href: "/store/1" },
+  { text: "Checkout", href: "/store/checkout" },
+  { href: "/blog/home", text: "Blog home" },
+  { href: "/blog/posts/1", text: "Blog post" },
+  { href: "/blog/tags", text: "Tag index" },
+  { href: "/blog/tags/astro", text: "Tag category" },
+  { href: "/rss.xml", text: "RSS" },
+  { href: "/helpcenter/home", text: "Home" },
+  { href: "/shelpcenterervices/1", text: "Details" },
+  { href: "/infopages/dpa", text: "DPA" },
+  { href: "/infopages/cookies", text: "Cookies" },
+  { href: "/infopages/terms", text: "Terms" },
+  { href: "/infopages/privacy", text: "Privacy" },
+  { href: "/infopages/cookies", text: "Cookies" },
+
+  { href: "/pricing/pricing-full", text: "Pricing Table" },
+  { href: "/forms/contact", text: "Contact" },
+  { href: "/infopages/about", text: "About us" },
+  { href: "/404", text: "Error 404" },
+  // Add more items as needed
+];
+---
+
+<footer class="py-2">
+  <div class="p-4 xl:pb-0 bg-[white] overflow-hidden rounded-xl">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div
+        class="flex flex-col h-full justify-between xl:pb-2 order-last md:order-none">
+        <nav role="navigation">
+          <ul class="text-xs space-y-1 font-mono uppercase text-neutral-500">
+            {
+              mainNavigation.map((link) => (
+                <li>
+                  <a
+                    class=" hover:text-orange-500"
+                    href={link.href}>
+                    {link.text}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <div class="flex gap-4 mt-12 items-center">
+          <img
+            src="/logos/williamsburg.svg"
+            alt="logo"
+            class="size-4"
+          />
+          <p
+            class="text-xs leading-5 text-neutral-400 text-pretty font-mono uppercase">
+            williamsubrg ©
+          </p>
+        </div>
+      </div>
+      <img
+        src="/logos/williamsburg.svg"
+        alt="logo"
+        class="size-12 md:size-96 md:mx-auto fill-orange-600 md:-mb-32 md:mt-72 order-first md:order-none"
+      />
+
+      <div class="flex flex-col h-full justify-between md:text-right xl:pb-2">
+        <nav role="navigation">
+          <ul class="text-xs space-y-1 font-mono uppercase text-neutral-500">
+            {
+              otherNavigation.map((link) => (
+                <li>
+                  <a
+                    class=" hover:text-orange-500"
+                    href={link.href}>
+                    {link.text}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <p
+          class="text-xs leading-5 text-neutral-400 text-pretty font-mono mt-12 uppercase">
+          © COPYRIGHT LEXINGTON THEMES {today.getFullYear()}.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

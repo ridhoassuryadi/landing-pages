@@ -1,0 +1,83 @@
+---
+const { position, company,location, type, url, image } = Astro.props;
+---
+
+<li>
+  <div class="relative py-6 group sm:rounded-2xl">
+    <div
+      class="absolute bg-white opacity-0 -inset-x-4 -inset-y-px group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl lg:-inset-x-8">
+    </div>
+    <div class="relative flex items-center">
+      <div
+        class="relative h-[3.125rem] w-[3.125rem] sm:h-[3.75rem] sm:w-[3.75rem] flex-none">
+        <img
+          class="absolute inset-0 object-cover w-full h-full rounded-full"
+          src={image}
+          alt={company}
+        />
+        <div
+          class="absolute inset-0 rounded-full ring-1 ring-inset ring-black/[0.08]">
+        </div>
+      </div>
+      <dl
+        class="ml-4 flex flex-auto flex-wrap gap-y-1 gap-x-2 overflow-hidden sm:ml-6 sm:grid sm:grid-cols-[auto_1fr_auto_auto] sm:items-center">
+        <div
+          class="col-span-2 mr-2.5 flex-none sm:mr-0"
+          data-v-exclude="">
+          <dt class="sr-only">Company</dt>
+          <dd class="text-xs font-semibold leading-6 text-purple-900">
+            {company}
+          </dd>
+        </div>
+        <div class="col-start-3 row-start-2 -ml-2.5 flex-auto sm:ml-0 sm:pl-6">
+          <dt class="sr-only">Location</dt>
+          <dd class="flex items-center text-xs leading-6 text-gray-600">
+            <svg
+              viewBox="0 0 2 2"
+              aria-hidden="true"
+              class="mr-2 h-0.5 w-0.5 flex-none fill-gray-400 sm:hidden">
+              <circle
+                cx="1"
+                cy="1"
+                r="1"
+              ></circle>
+            </svg> {location}
+          </dd>
+        </div>
+        <div class="flex-none w-full col-span-2 col-start-1">
+          <dt class="sr-only">Title</dt>
+          <dd class="text-[0.9375rem] font-semibold leading-6 text-purple-900">
+            <a
+              href={url}
+              title={company}>
+              <span
+                class="absolute -inset-x-4 inset-y-[calc(-1*(theme(spacing.6)+1px))] sm:-inset-x-6 sm:rounded-2xl lg:-inset-x-8"
+              ></span>
+              {type}
+            </a>
+          </dd>
+        </div>
+
+        <div class="col-start-1 mr-2.5 flex-none">
+          <dt class="sr-only">Type</dt>
+          <dd class="text-xs leading-6 text-gray-600">{position}</dd>
+        </div>
+        <div class="col-span-3 -ml-2.5 flex-none">
+          <dt class="sr-only">Salary</dt>
+          <dd class="flex items-center text-xs leading-6 text-gray-600">
+            <svg
+              viewBox="0 0 2 2"
+              aria-hidden="true"
+              class="mr-2 h-0.5 w-0.5 flex-none fill-gray-400">
+              <circle
+                cx="1"
+                cy="1"
+                r="1"
+              ></circle>
+            </svg> $140,000 - $180,000
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</li>

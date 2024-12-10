@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+video {
+  clip-path: inset(1px 1px);
+
+}
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+  "liga" 1,
+  "calt" 1, /* Contextual Alternates */
+  "dlig" 1, /* Discretionary Ligatures */
+  "ss07" 1, /* fSquare punctuation */
+  "ss08" 1, /* Square quotes */
+  "zero" 1, /* Slashed zero */
+  "tnum" 1, /* Tabular numbers */
+    "cv03" 1, /* Open six */
+    "cv04" 1, /* Open nine */
+    "cv01" 1, /* Alternate one */
+    "cv09", /* Flat-top three */
+    "cv02" 1; /* Open 4 */
+}
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+  "liga" 1,
+  "calt" 1, /* Contextual Alternates */
+  "dlig" 1, /* Discretionary Ligatures */
+  "ss07" 1, /* fSquare punctuation */
+  "ss08" 1, /* Square quotes */
+  "zero" 1, /* Slashed zero */
+  "tnum" 1, /* Tabular numbers */
+    "cv03" 1, /* Open six */
+    "cv04" 1, /* Open nine */
+    "cv01" 1, /* Alternate one */
+    "cv09", /* Flat-top three */
+    "cv02" 1; /* Open 4 */
+}
+@supports (font-variation-settings: normal) {
+  /* Use variable font if supported */
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+
+.prose-styles {
+  @apply prose max-w-3xl prose-blockquote:border-l-black prose-a:text-purple-500 hover:prose-a:text-purple-900 prose-headings:font-bold prose-headings:text-purple-900  prose-li:marker:text-purple-500 text-gray-500 prose-code:text-purple-900 prose-blockquote:text-gray-500
+}
+:root {
+  --astro-code-color-text: #000;
+  --astro-code-color-background: #fafafa;
+  --astro-code-token-constant: #00000080;
+  --astro-code-token-string: #000000;
+  --astro-code-token-comment: #00000080;
+  --astro-code-token-keyword: #0A9F7E;
+  --astro-code-token-parameter: #000000;
+  --astro-code-token-function: #9D07BE;
+  --astro-code-token-string-expression: #2d2efd;
+  --astro-code-token-punctuation: #000000;
+  --astro-code-token-link: #000000;
+}

@@ -1,0 +1,121 @@
+---
+import Sidebar from "./Sidebar.astro";
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="max-w-2xl">
+      <span class="text-xs font-bold tracking-wide uppercase text-purple-500">
+        Our superb Teams</span
+      >
+      <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+        Manage the Teams that you're a part of,
+        <span class="lg:block lg:text-gray-500">
+          join suggested ones, or create a new one.
+        </span>
+      </p>
+    </div>
+
+    <div
+      class="grid items-start grid-cols-1 gap-4 mt-12 lg:grid-cols-4 lg:gap-24">
+      <Sidebar />
+      <div class="lg:col-span-3">
+        <div class="space-y-6 lg:col-span-3">
+          <div class="bg-white rounded-md shadow-sm">
+            <div class="p-4">
+              <span class="text-xl font-medium leading-tight text-purple-900"
+                >Your user name
+              </span>
+              <p class="mt-2 text-sm text-gray-500">
+                This is your URL namespace within Semplice.
+              </p>
+              <div class="mt-2">
+                <div class="max-w-lg gap-3 mt-6">
+                  <label
+                    for="search"
+                    class="block text-sm font-medium text-gray-700"
+                    >Quick search</label
+                  >
+                  <div class="relative flex items-center mt-1">
+                    <input
+                      type="text"
+                      name="search"
+                      id="search"
+                      class="block w-full h-10 px-3 py-2 pr-12 placeholder-gray-500 bg-gray-100 border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+                      aria-label="Search"
+                    />
+                    <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+                      <kbd
+                        class="inline-flex items-center px-2 font-sans text-sm font-medium text-gray-400 border border-gray-200 rounded"
+                        aria-hidden="true"
+                        >⌘K</kbd
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-md shadow-sm">
+            <div class="p-4 lg:py-20">
+              <div class="text-center text-purple-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-12 h-12 mx-auto"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    stroke="none"
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  ></path>
+                  <circle
+                    cx="9"
+                    cy="7"
+                    r="4"
+                    opacity="0.5"
+                  ></circle>
+                  <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                  <path
+                    d="M16 3.13a4 4 0 0 1 0 7.75"
+                    opacity="0.5"
+                  ></path>
+                  <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
+                </svg>
+                <h3 class="mt-2 text-sm font-medium text-purple-900">
+                  No teams
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">
+                  Create a new Semplice Team to collaborate with others.
+                </p>
+                <div class="mt-6">
+                  <button
+                    type="submit"
+                    class="flex items-center justify-center h-10 px-4 py-2 mx-auto text-sm font-semibold text-white transition-all rounded-lg bg-gradient-to-b from-purple-500 hover:to-purple-700 to-purple-600">
+                    <svg
+                      class="w-5 h-5 mr-2 -ml-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    Create a team
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

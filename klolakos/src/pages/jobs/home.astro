@@ -1,0 +1,186 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("jobs");
+import Entries from "@/components/jobs/Entries.astro";
+
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <section class="relative overflow-hidden">
+    <div
+      class="relative items-center w-full px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="max-w-2xl">
+        <span class="text-xs font-bold tracking-wide uppercase text-purple-500"
+          >Join</span
+        >
+        <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+          Join our carrier network<span class="lg:block lg:text-gray-500">
+            and unlimited possibilities</span
+          >
+        </p>
+        <p class="max-w-xl mt-4 text-base text-gray-500">
+          Become a trusted partner in transporting success
+        </p>
+      </div>
+    </div>
+    <div
+      class="relative items-center w-full px-8 py-12 mx-auto max-w-7xl md:px-12 lg:px-24">
+      <img
+        class="object-cover w-full rounded drop-shadow"
+        src="/assets/map.svg"
+        alt=""
+      />
+    </div>
+  </section>
+  <section>
+    <div
+      class="items-center w-full px-8 py-12 mx-auto space-y-24 md:px-12 lg:px-32 max-w-7xl lg:py-12">
+      <div
+        class="grid items-end grid-cols-1 gap-4 mt-6 list-none lg:grid-cols-2 lg:gap-24">
+        <div>
+          <div>
+            <span
+              class="text-xs font-bold tracking-wide uppercase text-purple-500"
+              >our culture</span
+            >
+            <p
+              class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+              Our ethos:
+              <span class="lg:block lg:text-gray-500">
+                Learn, collaborate, be transparent, experiment, and stay
+                passionate.
+              </span>
+            </p>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">
+            Our team is driven by clear goals and unwavering dedication. To
+            achieve our objectives, we rely on the use of our own tools, which
+            we incorporate into our daily routine. We are also committed to
+            building a strong sense of community, working collaboratively to
+            achieve our goals and support each other along the way.
+            <br />
+            <br />
+            At the heart of our work is a deep and unwavering commitment to our customers.
+            We are obsessed with meeting their needs, providing them with the highest
+            quality service possible, and constantly seeking ways to improve their
+            experience.
+          </p>
+        </div>
+      </div>
+      <div>
+        <p class="text-4xl font-semibold tracking-tighter text-purple-900">
+          Work happier with us
+        </p>
+        <p class="max-w-xl mt-4 text-base text-gray-500">
+          We are waiting for you.
+        </p>
+      </div>
+      <ol
+        role="list"
+        class="grid grid-cols-1 gap-8 mt-12 list-none sm:grid-cols-2 lg:grid-cols-3">
+        <li>
+          <h3 class="text-base font-medium text-purple-900">
+            Inclusive Health Package
+          </h3>
+          <p class="mt-2 text-sm text-gray-500">
+            At our company, we care about your well-being and want to make it
+            easy for you and your family to access the healthcare you need.
+            life.
+          </p>
+        </li>
+        <li>
+          <h3 class="text-base font-medium text-purple-900">
+            Flexible Working Style
+          </h3>
+          <p class="mt-2 text-sm text-gray-500">
+            We understand that every team member is unique and has different
+            needs and preferences when it comes to their work environment.
+          </p>
+        </li>
+        <li>
+          <h3 class="text-base font-medium text-purple-900">
+            Generous Perks Program
+          </h3>
+          <p class="mt-2 text-sm text-gray-500">
+            We believe that taking care of our team members goes beyond just
+            offering competitive salaries and benefits.
+          </p>
+        </li>
+        <li>
+          <h3 class="text-base font-medium text-purple-900">
+            Diversity and Inclusion
+          </h3>
+          <p class="mt-2 text-sm text-gray-500">
+            Our company values diversity and recognizes that our team members'
+            varied backgrounds and experiences are what make us strong.
+          </p>
+        </li>
+        <li>
+          <h3 class="text-base font-medium text-purple-900">Learn And Grow</h3>
+          <p class="mt-2 text-sm text-gray-500">
+            We want our team members to be successful and fulfilled in their
+            careers.
+          </p>
+        </li>
+        <li>
+          <h3 class="text-base font-medium text-purple-900">
+            Balanced Working Life
+          </h3>
+          <p class="mt-2 text-sm text-gray-500">
+            At our company, we understand the importance of taking time to
+            recharge and prioritize self-care.
+          </p>
+        </li>
+      </ol>
+      <div class="pt-4 mx-auto border-t">
+        <small class="text-xs text-gray-500">
+          *Benefits may vary by country. Benefits listed above currently apply
+          to our US based employees. For non-US staff, equivalent benefits can
+          be discussed at the time of interview.
+        </small>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div
+      class="items-center px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="mx-auto max-w-2xl text-center">
+        <div>
+          <span
+            class="text-xs text-purple-500 uppercase font-bold tracking-wide"
+            >Explore
+          </span>
+          <p class="text-3xl mt-8 font-bold tracking-tight text-purple-900">
+            Join our team
+          </p>
+          <p class="text-base text-gray-500 mt-4">
+            Explore exciting opportunities and shape the future with us
+          </p>
+        </div>
+      </div>
+      <div class="mx-auto mt-12 lg:mt-24">
+        <ul class="divide-y divide-gray-100">
+          {
+            allPosts.slice().map((post) => (
+              <Entries
+                url={"/jobs/" + post.slug}
+                company={post.data.company}
+                location={post.data.location}
+                position={post.data.position}
+                type={post.data.type}
+                alt={post.data.company}
+                image={post.data.image.url}
+              />
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+</BaseLayout>

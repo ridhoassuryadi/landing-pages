@@ -1,0 +1,16 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+
+const { meta } = Astro.props;
+---
+
+<html
+  lang="en"
+  class="scroll-smooth selection:bg-purple-500 selection:text-white">
+  <head>
+    <BaseHead {...meta} />
+  </head>
+  <body class="bg-gray-100">
+    <slot />
+  </body>
+</html>

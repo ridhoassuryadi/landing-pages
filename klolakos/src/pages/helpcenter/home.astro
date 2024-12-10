@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("helpcenter");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import CtaOne from "@/components/cta/CtaOne.astro";
+import Entries from "@/components/helpcenter/Entries.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="max-w-2xl">
+        <span class="text-xs font-bold tracking-wide uppercase text-purple-500">
+          Help Center</span
+        >
+        <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+          We are here to help you
+        </p>
+
+      </div>
+
+      <div class="mt-12">
+        <ol
+          role="list"
+          class="grid grid-cols-1 gap-6 mt-12 list-none sm:grid-cols-2 lg:mt-24 lg:grid-cols-3">
+          {
+            allPosts.slice().map((post) => (
+              <Entries
+                url={"/helpcenter/" + post.slug}
+                page={post.data.page}
+                description={post.data.description}
+                alt={post.data.page}
+                icon={post.data.icon.url}
+              />
+            ))
+          }
+
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <CtaOne />
+</BaseLayout>

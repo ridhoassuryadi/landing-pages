@@ -1,0 +1,107 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-2">
+      <div class="flex flex-col  ">
+        <div>
+          <p
+            class="text-lg text-neutral-600 uppercase font-mono tracking-tight text-balance">
+            {frontmatter.title}
+          </p>
+          <p class="text-xs text-balance text-neutral-500">
+            <time datetime={frontmatter.pubDate.toString().slice(3, 16)}>
+              {frontmatter.pubDate.toString().slice(3, 16)}</time
+            >
+          </p>
+          <p class="text-sm text-neutral-500 text-balance mt-2">
+            {frontmatter.description}
+          </p>
+        </div>
+        <div class="relative flex flex-wrap mt-12 justify-start gap-2 max-w-xl">
+          {
+            frontmatter.tags.map((tag) => (
+              <a
+                class="text-xs text-neutral-500 font-medium hover:text-orange-600 "
+                href={`/blog/tags/${tag}`}>
+                {tag}
+              </a>
+            ))
+          }
+        </div>
+        <form class="mt-2">
+          <div class="flex flex-col gap-2">
+            <label
+              for="email-address"
+              class="sr-only"
+              >Email address</label
+            >
+            <input
+              id="email-address"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class="min-w-0 flex-auto rounded-xl font-mono border-0 h-14 text-sm uppercase duration-300 px-3.5 py-2 text-neutral-500 ring-1 ring-inset ring-white placeholder:text-neutral-400 focus:ring-2 focus:ring-inset focus:ring-orange-600"
+              placeholder="Enter your email"
+            />
+            <button
+              type="submit"
+              class="relative group overflow-hidden pl-4 font-mono h-14 flex space-x-6 items-center bg-orange-500 hover:bg-black duration-300 rounded-xl w-full justify-between">
+              <span class="relative uppercase text-xs text-white"
+                >Subscribe</span
+              >
+              <div
+                aria-hidden="true"
+                class="w-12 text-white transition duration-300 -translate-y-7 group-hover:translate-y-7">
+                <div class="h-14 flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 m-auto fill-white">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="h-14 flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 m-auto fill-white">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="prose-styles lg:col-span-2">
+        <img
+          class="w-full aspect-[4/2] rounded-2xl relative object-cover lg:-mt-2"
+          src={frontmatter.image.url}
+          alt={frontmatter.image.alt}
+        />
+        <slot />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

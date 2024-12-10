@@ -1,0 +1,105 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("customers");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Entries from "@/components/customers/Entries.astro";
+import LogoCloudTwo from "@/components/testimonials/LogoCloudTwo.astro";
+---
+
+<BaseLayout>
+  <section class="relative overflow-hidden">
+    <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="max-w-2xl">
+        <span class="text-xs text-purple-500 uppercase font-bold tracking-wide"
+          >Stories</span
+        >
+        <p class="text-4xl mt-8 font-semibold tracking-tighter text-purple-900">
+          Customer stories
+        </p>
+        <p class="text-base text-gray-500 mt-4">
+          Semplice powers more than 100,000 banks for businesses large and
+          small. Read their stories and see what Webflow can do for your
+          company.
+        </p>
+      </div>
+    </div>
+  </section>
+  <LogoCloudTwo />
+  <section>
+    <div
+      class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24 space-y-24">
+      <div
+        class="list-none grid grid-cols-1 lg:grid-cols-2 gap-4 items-center lg:gap-24">
+        <div>
+          <div>
+            <img
+              class="h-8"
+              src="/assets/logos/basecamp.svg"
+              alt=" logo"
+            />
+          </div>
+          <p class="text-gray-500 mt-12 text-sm">
+            "Our engineering team was spending far too much time on trivial
+            changes to static marketing pages, which slowed down our sprints and
+            meant more code to manage. We wanted a CMS that would improve site
+            speed and reduce the need for engineering time — which pushed us to
+            consider a no-code approach. "
+          </p>
+        </div>
+        <div class="h-full lg:mt-0 mt-12">
+          <img
+            alt="thumbnail"
+            class="w-full rounded-2xl h-full object-cover"
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80"
+          />
+        </div>
+      </div>
+
+      <ol
+        role="list"
+        class="-mx-3 grid grid-cols-1 gap-y-10 py-12 md:grid-cols-2 lg:text-center xl:-mx-12">
+        {
+          allPosts.slice().map((post) => (
+            <Entries
+              url={"/customers/" + post.slug}
+              customer={post.data.customer}
+              feedback={post.data.feedback}
+              alt={post.data.customer}
+              logo={post.data.logo.url}
+            />
+          ))
+        }
+      </ol>
+      <div
+        class="list-none grid grid-cols-1 lg:grid-cols-2 gap-4 items-center lg:gap-24">
+        <div>
+          <div>
+            <img
+              class="h-8"
+              src="/assets/logos/github.svg"
+              alt=" logo"
+            />
+          </div>
+          <p class="text-gray-500 mt-12 text-sm">
+            "Our engineering team was dedicating excessive time and effort to
+            make minor modifications to unchanging marketing pages, leading to
+            slower progress and an increased burden of code maintenance. In
+            order to streamline development and reduce the need for engineering
+            resources, we sought a CMS solution that could enhance website
+            performance and eliminate the need for coding expertise. This
+            ultimately led us to explore the possibility of utilizing a no-code
+            approach."
+          </p>
+
+        </div>
+        <div class="h-full lg:mt-0 mt-12 lg:order-first">
+          <img
+            alt="thumbnail"
+            class="w-full rounded-2xl h-full object-cover"
+            src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

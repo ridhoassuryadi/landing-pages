@@ -1,0 +1,95 @@
+---
+// Define your content data here
+const imageFeatures = [
+  {
+    title: "Custom tokens",
+    description:
+      "Our smart contract technology allows for automated, self-executing transactions without the need for intermediaries.",
+    imgSrc: "/assets/phonebox1.png",
+    link: "#",
+    ariaLabel: "Learn more about custom tokens",
+  },
+  {
+    title: "Smart contract",
+    description:
+      "Our platform is designed to handle thousands of transactions per second and can easily accommodate your unique needs.",
+    imgSrc: "/assets/phonebox2.png",
+    link: "#",
+    ariaLabel: "Discover smart contracts",
+  },
+];
+const steps = [
+  {
+    title: "Automation",
+    description: "Our smart contracts allow for seamless, automated transactions without the need for intermediaries."
+  },
+  {
+    title: "Exchange",
+    description: "Trade cryptocurrencies and tokens on a decentralized exchange for added security and anonymity."
+  },
+  {
+    title: "Governance",
+    description: "Use blockchain technology to create decentralized autonomous organizations and manage them with ease."
+  }
+];
+
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="max-w-2xl mx-auto text-center">
+      <span class="text-xs font-bold tracking-wide uppercase text-purple-900"
+        >simple steps</span
+      >
+      <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+        Keep your sensitive
+        <span class="block text-gray-500"> information private</span>
+      </p>
+      <p class="max-w-xl mx-auto mt-4 text-base text-gray-500">
+        With decentralization, users have more control over their data and
+        transactions, and the platform is less susceptible to malicious attacks.
+      </p>
+    </div>
+
+    <dl
+      class="grid grid-cols-1 gap-2 mt-12 md:grid-cols-2 lg:grid-cols-2 lg:mt-24">
+      {
+        imageFeatures.map((item) => (
+          <a
+            title="link to your page"
+            aria-label={item.ariaLabel}
+            href={item.link}>
+            <div class="h-full bg-white rounded-3xl shadow-sm">
+              <div class="p-8 pb-0 md:text-center">
+                <p class="text-base font-medium text-purple-900">
+                  {item.title}
+                </p>
+                <p class="mt-2 text-sm text-gray-500">{item.description}</p>
+              </div>
+              <div class="mt-4">
+                <img
+                  src={item.imgSrc}
+                  alt=""
+                />
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </dl>
+   <ol role="list" class="grid grid-cols-1 gap-12 mt-12 text-center list-none sm:grid-cols-2 md:grid-cols-3">
+  {steps.map((step, index) => (
+    <li>
+      <div
+        class="flex items-center justify-center w-10 h-10 text-sm font-semibold transition-all bg-white shadow-sm hover:shadow-none duration-200 border rounded-lg text-purple-600 hover:text-purple-500 mx-auto">
+        {index + 1}
+      </div>
+      <h3 class="mt-4 text-base font-medium text-purple-900">{step.title}</h3>
+      <p class="mt-2 text-sm text-gray-500">
+        {step.description}
+      </p>
+    </li>
+  ))}
+</ol>
+  </div>
+</section>

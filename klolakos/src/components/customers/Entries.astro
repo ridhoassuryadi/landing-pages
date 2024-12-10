@@ -1,0 +1,26 @@
+---
+const { customer, feedback, logo, url } = Astro.props;
+---
+
+<li class="flex flex-col h-full p-8 max-w-md mx-auto text-center">
+  <div class="relative mx-auto">
+    <img
+      class="w-full h-20"
+      src={logo}
+      alt={customer}
+    />
+    <div class="mt-10">
+      <a
+        class="text-purple-600  text-sm bg-white border border-gray-300
+        flex font-semibold hover:text-purple-500 items-center justify-center px-4 py-2 rounded-lg transition-all h-10"
+        aria-label="your label"
+        href={url}
+        title={customer}>
+        Read {customer} case study &nbsp;&nbsp; &rarr;</a
+      >
+    </div>
+  </div>
+  <p class="text-gray-500 text-sm text-balance mt-4">
+    {feedback}
+  </p>
+</li>

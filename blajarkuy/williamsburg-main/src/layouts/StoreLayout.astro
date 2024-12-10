@@ -1,0 +1,164 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <section>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 just xl:grid-cols-3 gap-2">
+      <div class="flex flex-col gap-2 h-full justify-between">
+        <div>
+          <h1
+            class="text-lg text-neutral-600 font-mono tracking-tight text-balance">
+            {frontmatter.title}
+          </h1>
+
+          <p class="text-neutral-500 mt-2 text-sm">
+            {frontmatter.description}
+          </p>
+        </div>
+        <div class="gap-2 flex flex-col h-full justify-end">
+          <a
+            href={frontmatter.checkout}
+            title="link to your page"
+            aria-label="your label"
+            class="relative group overflow-hidden pl-4 font-mono h-14 flex space-x-6 items-center bg-white hover:bg-neutral-200 duration-300 rounded-xl w-full justify-between">
+            <span class="relative uppercase text-xs text-orange-600"
+              >Preview</span
+            >
+            <div
+              aria-hidden="true"
+              class="w-12 text-orange-600 transition duration-300 -translate-y-7 group-hover:translate-y-7">
+              <div class="h-14 flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 m-auto fill-white">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                  ></path>
+                </svg>
+              </div>
+              <div class="h-14 flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 m-auto fill-white">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+          <a
+            href={frontmatter.checkout}
+            title="link to your page"
+            aria-label="your label"
+            class="relative group overflow-hidden pl-4 font-mono h-14 flex space-x-6 items-center bg-orange-500 hover:bg-black duration-300 rounded-xl w-full justify-between">
+            <span class="relative uppercase text-xs text-white"
+              >Add to cart</span
+            >
+            <div
+              aria-hidden="true"
+              class="w-12 text-white transition duration-300 -translate-y-7 group-hover:translate-y-7">
+              <div class="h-14 flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 m-auto fill-white">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                  ></path>
+                </svg>
+              </div>
+              <div class="h-14 flex">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 m-auto fill-white">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="space-y-2 h-full">
+          <div class="bg-white rounded-xl p-4">
+            <h3
+              class="text-lg text-neutral-600 uppercase font-mono tracking-tight">
+              Highlights
+            </h3>
+            <div class="text-neutral-500 mt-4 text-sm">
+              <ul role="list">
+                {
+                  frontmatter.highlights.map((highlight) => (
+                    <li>{highlight}</li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-4">
+            <h3
+              class="text-lg text-neutral-600 uppercase font-mono tracking-tight">
+              License
+            </h3><p class="text-neutral-500 mt-4 text-sm">
+              {frontmatter.license}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-span-2 flex flex-col gap-2">
+        {
+          frontmatter.images?.map((image) => (
+            <img
+              src={image.url}
+              alt={image.alt}
+              class="object-center object-cover rounded-xl aspect-[4/2] w-full h-96"
+            />
+          ))
+        }
+      </div>
+      <dl class="flex flex-col md:flex-row gap-2 col-span-full">
+        {
+          frontmatter.components.map((component) => (
+            <div class="p-4 rounded-xl bg-white">
+              <dt>
+                <span class="text-lg text-neutral-600 uppercase font-mono tracking-tight">
+                  {component.title}
+                </span>
+              </dt>
+              <dd class="text-neutral-500 mt-4 text-sm">
+                {component.description}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+</BaseLayout>
