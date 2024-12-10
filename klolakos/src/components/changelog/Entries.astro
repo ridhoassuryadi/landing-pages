@@ -1,0 +1,37 @@
+---
+const { page, description, image, pubDate, url } = Astro.props;
+---
+
+<div class="grid items-start grid-cols-1 gap-4 lg:grid-cols-4">
+  <div class="flex flex-col flex-shrink-0 mb-6 md:mb-0">
+    <p>
+      <span class="text-xs font-bold tracking-wide uppercase text-purple-900"
+        >{pubDate}</span
+      >
+      <span
+        class="inline-flex ml-3 items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-gray-50 text-purple-500">
+        Update
+      </span>
+    </p>
+  </div>
+  <div class="lg:col-span-3">
+
+    <h2
+      class="text-4xl  font-semibold tracking-tighter text-purple-900 hover:text-purple-500">
+      {page}
+    </h2>
+
+    <div class="prose-styles mt-12">
+      {description}
+    </div>
+    <div class="flex mt-8">
+      <a
+        class="flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-semibold text-white transition-all rounded-lg bg-gradient-to-b from-purple-500 hover:to-purple-700 to-purple-600 md:w-auto"
+        href={url}
+        title={page}
+        aria-label={page}
+        >See all pages</a
+      >
+    </div>
+  </div>
+</div>

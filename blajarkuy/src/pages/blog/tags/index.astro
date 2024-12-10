@@ -1,0 +1,82 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const allPosts = await getCollection("posts");
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const pageTitle = "Tag Index";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-2">
+      <div>
+        <h1
+          class="text-lg text-neutral-600 font-mono tracking-tight text-balance uppercase">
+          All tags
+        </h1>
+        <p class="text-sm text-balance text-neutral-500">
+          All tags from our blog.
+        </p>
+      </div>
+      <div class="items-center col-span-2">
+        <div class="grid items-end gap-4 lg:grid-cols-3">
+          <div class="col-span-full flex flex-col gap-2">
+            {
+              tags.sort().map((tag) => (
+                <>
+                  <a
+                    href="/blog/home"
+                    class="relative group overflow-hidden pl-4 font-mono h-14 flex space-x-6 items-center bg-orange-500 hover:bg-black duration-300 rounded-xl w-full justify-between">
+                    <span class="relative uppercase text-xs text-white">
+                      {tag}
+                    </span>
+                    <div
+                      aria-hidden="true"
+                      class="w-12 text-white transition duration-300 -translate-y-7 group-hover:translate-y-7">
+                      <div class="h-14 flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6 m-auto fill-white">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                          />
+                        </svg>
+                      </div>
+                      <div class="h-14 flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6 m-auto fill-white">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    class="font-mono uppercase text-neutral-500 hover:text-orange-500 sr-only"
+                    href={`/blog/tags/${tag}`}>
+                    {tag}
+                  </a>
+                </>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

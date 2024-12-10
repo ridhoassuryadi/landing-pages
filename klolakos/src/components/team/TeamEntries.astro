@@ -1,0 +1,21 @@
+---
+const { name, role, avatar, url } = Astro.props;
+---
+
+<li>
+  <a
+    href={url}
+    title={name}
+    class="flex items-center gap-4">
+    <img
+      class="object-cover w-12 h-12 rounded-full"
+      src={avatar}
+      alt={name}
+    />
+    <div>
+      <p class="font-medium text-purple-900 sm">{name}</p>
+      <p class="mt-1 text-xs text-gray-500">{role}</p>
+    </div>
+  </a>
+</li>
+

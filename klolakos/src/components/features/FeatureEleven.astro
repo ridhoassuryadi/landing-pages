@@ -1,0 +1,74 @@
+---
+// Define your items data here
+const items = [
+  {
+    title: "Exchange",
+    description:
+      "Trade cryptocurrencies and tokens on a decentralized exchange for added security and anonymity.",
+    imgSrc: "/assets/card1.svg",
+    gradient: "from-purple-800 via-purple-700 to-purple-500",
+  },
+  {
+    title: "Automation",
+    description:
+      "Our smart contracts allow for seamless, automated transactions without the need for intermediaries.",
+    imgSrc: "/assets/card2.svg",
+    gradient: "from-[#1c1d1e] to-[#353739]",
+  },
+  {
+    title: "Governance",
+    description:
+      "Use blockchain technology to create decentralized autonomous organizations and manage them with ease.",
+    imgSrc: "/assets/card3.svg",
+    gradient: "from-[#727373] to-[#d8d9da]",
+  },
+];
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="max-w-2xl mx-auto text-center">
+      <span class="text-xs font-bold tracking-wide uppercase text-purple-500"
+        >options</span
+      >
+      <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+        Streamlining processes
+        <span class="md:block md:text-gray-500">
+          with self-executing contracts</span
+        >
+      </p>
+      <p class="max-w-2xl mx-auto mt-4 text-base text-gray-500">
+        Control and added security. With decentralization, users have more
+        control over their data and transactions, and the platform is less
+        susceptible to malicious attacks.
+      </p>
+    </div>
+    <ol
+      role="list"
+      class="grid grid-cols-1 mt-12 -mx-3 gap-y-10 lg:mt-24 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-gray-400/20">
+      {
+        items.map((item) => (
+          <li class="grid items-center grid-cols-1 gap-8 px-3 auto-rows-min sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12">
+            <div
+              class={`relative h-40 bg-gradient-to-t ${item.gradient} overflow-hidden rounded-2xl`}>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <img
+                  alt="image"
+                  src={item.imgSrc}
+                  class="absolute inset-0 w-full h-full lg:object-cover"
+                />
+              </div>
+            </div>
+            <div>
+              <h3 class="text-base font-medium tracking-tight text-purple-900">
+                {item.title}
+              </h3>
+              <p class="mt-2 text-sm text-gray-500">{item.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+   
+  </div>
+</section>

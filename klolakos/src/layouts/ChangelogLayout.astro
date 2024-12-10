@@ -1,0 +1,21 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <section>
+    <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+
+        <div class="prose-styles mx-auto">
+          <span class="text-xs font-bold tracking-wide uppercase text-purple-500"
+            >{frontmatter.pubDate.toString().slice(0, 10)}</span
+          >
+          <h1 >
+            {frontmatter.page}
+          </h1>
+        <slot />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

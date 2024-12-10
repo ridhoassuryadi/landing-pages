@@ -1,0 +1,247 @@
+---
+const featuresData = [
+  {
+    title: "Decentralized Security",
+    description:
+      "Our platform utilizes blockchain technology to provide unbreakable security for all user data",
+    icon: "security",
+  },
+  {
+    title: "Smart Contract Automation",
+    description:
+      "Our smart contracts allow for seamless, automated transactions without the need for intermediaries.",
+    icon: "contract",
+  },
+  {
+    title: "Scalable Transactions",
+    description:
+      "Our technology can handle thousands of transactions per second, making it perfect for high-traffic applications.",
+    icon: "transactions",
+  },
+  {
+    title: "Custom Token Creation",
+    description:
+      "Easily create and manage your own custom cryptocurrency tokens on our platform.",
+    icon: "token",
+  },
+  {
+    title: "Private Data Management",
+    description:
+      "Keep your sensitive information private and secure with our advanced data encryption techniques.",
+    icon: "data",
+  },
+  {
+    title: "Decentralized Identity",
+    description:
+      "Take control of your online identity with our decentralized identity management system.",
+    icon: "identity",
+  },
+];
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="max-w-2xl">
+      <span class="text-xs font-bold tracking-wide uppercase text-purple-500"
+        >Automation</span
+      >
+      <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+        Empowering users with
+        <span class="lg:block lg:text-gray-500"
+          >control over identity data
+        </span>
+      </p>
+      <p class="mt-4 text-base text-gray-500">
+        Control and added security. With decentralization, users have more
+        control over their data and transactions, and the platform is less
+        susceptible attacks.
+      </p>
+    </div>
+    <ol
+      role="list"
+      class="grid grid-cols-1 gap-8 mt-12 list-none sm:grid-cols-2 lg:grid-cols-3">
+      {
+        featuresData.map((feature) => (
+          <li>
+            <div class="gap-2 md:inline-flex md:items-center">
+              <div class="text-purple-500">
+                {feature.icon === "security" && (
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 12v-6a2 2 0 0 1 4 0v6m0 -2a2 2 0 1 1 2 2h-6"
+                      opacity="0.5"
+                    />
+                    <path d="M12 12h6a2 2 0 0 1 0 4h-6m2 0a2 2 0 1 1 -2 2v-6" />
+                    <path d="M12 12v6a2 2 0 0 1 -4 0v-6m0 2a2 2 0 1 1 -2 -2h6" />
+                    <path
+                      d="M12 12h-6a2 2 0 0 1 0 -4h6m-2 0a2 2 0 1 1 2 -2v6"
+                      opacity="0.5"
+                    />
+                  </svg>
+                )}
+                {feature.icon === "contract" && (
+                  <svg
+                    aria-hidden="true"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+                    <line
+                      x1="13.5"
+                      y1="6.5"
+                      x2="17.5"
+                      y2="10.5"
+                      opacity="0.5"
+                    />
+                  </svg>
+                )}
+                {feature.icon === "transactions" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 4v3m-4 -3v6m8 -6v6"
+                      opacity="0.5"
+                    />
+                    <path d="M12 18.5l-3 1.5l.5 -3.5l-2 -2l3 -.5l1.5 -3l1.5 3l3 .5l-2 2l.5 3.5z" />
+                  </svg>
+                )}
+                {feature.icon === "token" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2"
+                      opacity="0.5"
+                    />
+                    <path d="M14 8h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5m2 0v1.5m0 -9v1.5" />
+                  </svg>
+                )}
+                {feature.icon === "data" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M4 20h4v-4h4v-4h4v-4h4"
+                      opacity="0.5"
+                    />
+                    <path d="M4 11l7 -7v4m-4 -4h4" />
+                  </svg>
+                )}
+                {feature.icon === "identity" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    class="w-6 h-6"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      stroke="none"
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                    />
+                    <line
+                      x1="7"
+                      y1="8.5"
+                      x2="10"
+                      y2="11.5"
+                      opacity="0.5"
+                    />
+                    <path
+                      d="M7 11.5l3 -3"
+                      opacity="0.5"
+                    />
+                    <line
+                      x1="14"
+                      y1="8.5"
+                      x2="17"
+                      y2="11.5"
+                      opacity="0.5"
+                    />
+                    <path
+                      d="M14 11.5l3 -3"
+                      opacity="0.5"
+                    />
+                    <path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
+                  </svg>
+                )}
+              </div>
+              <h3 class="mt-6 text-base font-medium text-purple-900 md:mt-0">
+                {feature.title}
+              </h3>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">{feature.description}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

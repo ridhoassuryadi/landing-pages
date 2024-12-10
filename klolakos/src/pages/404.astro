@@ -1,0 +1,79 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+---
+
+<BaseLayout>
+  <section>
+    <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div>
+        <span class="text-xs font-bold tracking-wide uppercase text-purple-500"
+          >Welcome to Semplice</span
+        >
+
+        <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+          404 - Page Not Found
+        </p>
+        <p class="max-w-2xl mt-4 text-lg text-gray-500">
+          Oops! Looks like you've taken a wrong turn.
+        </p>
+
+        <div
+          class="flex flex-col items-center justify-start gap-3 mt-10 md:flex-row">
+          <a
+            class="flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-semibold text-white transition-all rounded-lg bg-gradient-to-b from-purple-500 hover:to-purple-700 to-purple-600 md:w-auto"
+            title="link to your page"
+            aria-label="your label"
+            href="/"
+            >&larr; &nbsp; go home</a
+          >
+          <a
+            class="flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-semibold transition-all bg-white border border-gray-300 rounded-lg md:w-auto text-purple-600 hover:text-purple-500"
+            title="link to your page"
+            aria-label="your label"
+            href="https://lexingtonthemes.lemonsqueezy.com/checkout/buy/59105270-55f2-42b0-9728-3094f40f86f4">
+            Get Semplice
+          </a>
+        </div>
+      </div>
+      <div
+        class="max-w-3xl mt-12 prose text-gray-500 prose-blockquote:border-l-black prose-a:text-purple-500 hover:prose-a:text-purple-900 prose-headings:font-bold prose-headings:text-purple-900 prose-li:marker:text-purple-500 prose-code:text-purple-900 prose-blockquote:text-gray-500">
+        <h2>
+          We're sorry, but the page you are trying to reach does not exist. It
+          might have been moved, deleted, or never even existed in the first
+          place.
+        </h2>
+        <h4>What can you do?</h4>
+        <ul>
+          <li>
+            Double-check the URL: Make sure you've typed the address correctly.
+          </li>
+          <li>
+            Go back to the previous page: Use your browser's back button to
+            return to the page you came from.
+          </li>
+          <li>
+            Visit our homepage: Start fresh and explore our website from the
+            beginning.
+          </li>
+          <li>
+            Contact us: If you believe there's a problem with the website or
+            need further assistance, please reach out to our support team.
+          </li>
+        </ul>
+        <p>
+          While you're here, let us take this moment to invite you to explore
+          the rest of our website. We have a lot to offer, and we're confident
+          you'll find something that captures your interest.
+        </p>
+        <p>
+          Our team is constantly working to enhance your experience, and we
+          apologize for any inconvenience this might have caused. Thank you for
+          your understanding, and we hope to see you soon on another exciting
+          part of our site!
+        </p>
+        <p>Best regards,<br />Semplice's Team</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

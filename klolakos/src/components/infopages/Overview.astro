@@ -1,0 +1,160 @@
+---
+const pagesData = [
+  {
+    mainCategory: "All pages",
+    categories: [
+      {
+        category: "Landing Pages",
+        links: [
+          { name: "Landing Page One", href: "/landingpages/index-one" },
+          { name: "Landing Page Two", href: "/landingpages/index-two" },
+          { name: "Landing Page Three", href: "/landingpages/index-three" },
+          { name: "Coming Soon", href: "/infopages/coming-soon" },
+          { name: "Status", href: "/infopages/status" },
+          { name: "About", href: "/infopages/about" },
+          { name: "404", href: "/404" },
+        ],
+      },
+      {
+        category: "Forms",
+        links: [
+          { name: "Contact", href: "/forms/contact" },
+          { name: "Contact two", href: "/forms/contact-two" },
+          { name: "Submit", href: "/forms/submit" },
+          { name: "Login", href: "/forms/login" },
+          { name: "Sign up", href: "/forms/signup" },
+          { name: "Forgot Password", href: "/forms/forgot" },
+          { name: "Reset Password", href: "/forms/reset" },
+        ],
+      },
+      {
+        category: "Dashboard",
+        links: [
+          { name: "General", href: "/dashboard/general" },
+          { name: "Teams", href: "/dashboard/dashboard-teams" },
+          { name: "Connections", href: "/dashboard/connections" },
+          { name: "Billing", href: "/dashboard/billing" },
+          { name: "Invoices", href: "/dashboard/invoices" },
+          { name: "Tokens", href: "/dashboard/tokens" },
+        ],
+      },
+      {
+        category: "System Pages",
+        links: [
+          { name: "All Features", href: "/components/features" },
+          { name: "All Pricing Tables", href: "/components/pricing" },
+          { name: "Style Guide", href: "/system/style-guide" },
+        ],
+      },
+    ],
+  },
+  {
+    mainCategory: "Content collections",
+    categories: [
+      {
+        category: "Blog",
+        links: [
+          { name: "Blog", href: "/blog/home" },
+          { name: "Blog Post", href: "/posts/1" },
+          { name: "Tag Home", href: "/tags" },
+          { name: "Tag Details", href: "/blog/tag/digital" },
+          { name: "RSS", href: "/rss.xml" },
+        ],
+      },
+      {
+        category: "Changelog",
+        links: [
+          { name: "Home", href: "/changelog/home" },
+          { name: "Details", href: "/changelog/1" },
+        ],
+      },
+      {
+        category: "Help Center",
+        links: [
+          { name: "Home", href: "/helpcenter/home" },
+          { name: "Details", href: "/help/1" },
+        ],
+      },
+      {
+        category: "Utility Pages",
+        links: [
+          { name: "DPA", href: "/infopages/dpa" },
+          { name: "Terms Of Use", href: "/infopages/terms" },
+          { name: "Privacy Policy", href: "/infopages/privacy" },
+        ],
+      },
+      {
+        category: "Customers",
+        links: [
+          { name: " Home", href: "/customers/home" },
+          { name: "Details", href: "/customers/1" },
+        ],
+      },
+      {
+        category: "Integrations",
+        links: [
+          { name: "Home", href: "/integrations/home" },
+          { name: " Details", href: "/integrations/1" },
+        ],
+      },
+      {
+        category: "Jobs",
+        links: [
+          { name: " Home", href: "/jobs/home" },
+          { name: "Details", href: "/jobs/1" },
+        ],
+      },
+      {
+        category: "Team",
+        links: [
+          { name: " Home", href: "/team/home" },
+          { name: "Details", href: "/team/1" },
+        ],
+      },
+    ],
+  },
+];
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="max-w-2xl">
+      <span class="text-xs font-bold tracking-wide uppercase text-purple-500"
+        >Description</span
+      >
+    </div>
+
+    <div class="mt-12 space-y-24">
+      {
+        pagesData.map((mainCategory) => (
+          <div>
+            <p class="mt-8 text-4xl font-semibold tracking-tighter md:text-6xl lg:text-5xl text-purple-900">
+              {mainCategory.mainCategory}
+            </p>
+            <div class="grid grid-cols-2 gap-12 md:grid-cols-3 lg:grid-cols-5 mt-10 border-t">
+              {mainCategory.categories.map((category) => (
+                <div class="mt-8">
+                  <p class="text-base font-medium text-purple-900">
+                    {category.category}
+                  </p>
+                  <div>
+                    {category.links.map((link, index) => (
+                      <div class="mt-2 text-sm">
+                        <a
+                          class=" text-sm text-gray-500 hover:text-purple-500"
+                          title={link.name}
+                          href={link.href}>
+                          {link.name}
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

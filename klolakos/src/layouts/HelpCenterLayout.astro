@@ -1,0 +1,45 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout>
+  <section>
+    <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="max-w-2xl">
+        <span class="text-xs font-bold tracking-wide uppercase text-purple-500">
+          Article</span
+        >
+        <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+          {frontmatter.page}
+        </p>
+      </div>
+
+      <div class="prose-styles mt-12">
+        <slot />
+      </div>
+
+      <div class="max-w-xl mt-12 border-t">
+        <div class="inline-flex items-center w-full py-4">
+          <p class="font-medium text-gray-500">Was this helpful?</p>
+
+          <span class="inline-flex ml-auto rounded-md shadow-sm isolate">
+            <button
+              type="button"
+              class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold transition-all bg-white border border-gray-300 rounded-l-md ext-purple-600 hover:text-purple-500"
+              >Yes</button
+            >
+
+            <button
+              type="button"
+              class="flex items-center justify-center h-10 px-4 py-2 -ml-px text-sm font-semibold transition-all bg-white border border-gray-300 rounded-r-md text-purple-600 hover:text-purple-500"
+              >No</button
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</BaseLayout>

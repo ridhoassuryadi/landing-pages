@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("team");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import TeamEntries from "@/components/team/TeamEntries.astro";
+import CtaThree from "@/components/cta/CtaThree.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="relative px-8 py-12 mx-auto max-w-7xl md:px-12 lg:px-32 lg:py-24">
+      <div class="max-w-2xl">
+        <span class="text-xs font-bold tracking-wide uppercase text-purple-500"
+          >team</span
+        >
+
+        <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+          Our powerfull team
+          <span class="lg:block lg:text-gray-500">Always ready to rock</span>
+        </p>
+      </div>
+
+      <ul
+        class="grid grid-cols-2 gap-8 mt-12 list-none lg:mt-24 lg:grid-cols-3"
+        role="list">
+        {
+          allPosts.map((post) => (
+            <TeamEntries
+              url={"/team/" + post.slug}
+              name={post.data.name}
+              role={post.data.role}
+              avatar={post.data.avatar.url}
+            />
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+  <CtaThree/>
+</BaseLayout>

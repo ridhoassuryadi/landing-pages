@@ -1,0 +1,122 @@
+---
+import Sidebar from "./Sidebar.astro";
+---
+
+<section>
+  <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="max-w-2xl">
+      <span class="text-xs font-bold tracking-wide uppercase text-purple-500">
+        Tokens</span
+      >
+      <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+        Keep track of your tokens right here
+      </p>
+    </div>
+
+    <div
+      class="grid items-start grid-cols-1 gap-4 mt-12 lg:grid-cols-4 lg:gap-24">
+      <Sidebar />
+      <div class="lg:col-span-3">
+        <div class="space-y-6 lg:col-span-3">
+          <div class="rounded-md bg-white">
+            <div class="p-4">
+              <div>
+                <div
+                  class="justify-center gap-3 lg:inline-flex lg:items-center">
+                  <div class="mt-3 sm:mt-0">
+                    <button
+                      type="submit"
+                      class="flex items-center justify-center h-8 px-4 py-2 text-sm font-semibold transition-all bg-white border border-gray-300 rounded-lg text-purple-600 hover:text-purple-500">
+                      <span>Create</span>
+                    </button>
+                  </div>
+                  <div class="mt-3 sm:mt-0">
+                    <button
+                      type="submit"
+                      class="flex items-center justify-center h-8 px-4 py-2 text-sm font-semibold transition-all bg-white border border-gray-300 rounded-lg text-purple-600 hover:text-purple-500">
+                      <span>Delete</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col overflow-hidden border rounded-md">
+            <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="inline-block min-w-full px-6 px-8 py-2 align-middle">
+                <div
+                  class="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-md">
+                  <table
+                    class="min-w-full divide-y divide-gray-300 table-fixed">
+                    <thead class="bg-gray-50">
+                      <tr>
+                        <th
+                          scope="col"
+                          class="relative w-12 px-6 sm:w-16 sm:px-8">
+                          <input
+                            type="checkbox"
+                            class="absolute size-4 -mt-2 border-gray-300 rounded left-4 top-1/2 text-purple-600 focus:ring-purple-500 sm:left-6"
+                          />
+                        </th>
+                        <th
+                          scope="col"
+                          class="min-w-[12rem] py-3.5 pr-3 text-left text-sm font-semibold text-purple-900"
+                          >Name
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-3 py-3.5 text-left text-sm font-semibold text-purple-900"
+                          >Scope
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-3 py-3.5 text-left text-sm font-semibold text-purple-900"
+                          >Email
+                        </th>
+                        <th
+                          scope="col"
+                          class="px-3 py-3.5 text-left text-sm font-semibold text-purple-900"
+                          >Last Active
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                      <tr>
+                        <td class="relative w-12 px-6 sm:w-16 sm:px-8">
+                          <div
+                            class="absolute inset-y-0 left-0 w-0.5 bg-purple-600">
+                          </div>
+                          <input
+                            type="checkbox"
+                            class="absolute size-4 -mt-2 border-gray-300 rounded left-4 top-1/2 text-purple-600 focus:ring-purple-500 sm:left-6"
+                          />
+                        </td>
+
+                        <td
+                          class="py-4 pr-3 text-sm font-medium text-purple-900 whitespace-nowrap"
+                          >Website, Login with GitHub
+                        </td>
+                        <td
+                          class="px-3 py-4 text-sm text-gray-500 whitespace-nowrap"
+                          >All non-SAML Teams
+                        </td>
+                        <td
+                          class="px-3 py-4 text-sm text-gray-500 whitespace-nowrap"
+                          >514d ago
+                        </td>
+                        <td
+                          class="px-3 py-4 text-sm text-gray-500 whitespace-nowrap"
+                          >Never
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+const { page, description, icon, url } = Astro.props;
+---
+
+<li
+  class="h-full p-6 duration-200 bg-white hover:shadow-none rounded-2xl shadow-sm">
+  <a
+    href={url}
+    title={page}>
+    <div class="lg:inline-flex lg:items-center">
+      <img class="size-5"
+        src={icon}
+        alt={page}
+      />
+      <h3 class="mt-6 text-base font-medium text-purple-900 lg:ml-3 lg:mt-0">
+        {page}
+      </h3>
+    </div>
+    <p class="mt-2 text-sm text-gray-500">
+      {description}
+    </p>
+  </a>
+</li>
+
+

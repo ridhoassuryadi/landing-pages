@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("integrations");
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Entries from "@/components/integrations/Entries.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+      <div class="max-w-2xl">
+        <span class="text-xs font-bold tracking-wide uppercase text-purple-500"
+          >integratiosn</span
+        >
+        <p class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+          Unleashing the power <span class="md:block md:text-gray-500"
+            >of seamless integrations</span
+          >
+        </p>
+        <p class="mt-4 text-base text-gray-500">
+          Discover a world of possibilities by connecting our platform with your
+          tools and services.
+        </p>
+      </div>
+      <ol
+        role="list"
+        class="grid grid-cols-1 gap-6 mt-12 list-none sm:grid-cols-2 lg:mt-24 lg:grid-cols-3">
+        {
+          allPosts.slice().map((post) => (
+            <Entries
+              url={"/integrations/" + post.slug}
+              integration={post.data.integration}
+              description={post.data.description}
+              alt={post.data.integration}
+              permissions={post.data.permissions}
+              logo={post.data.logo.url}
+            />
+          ))
+        }
+
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

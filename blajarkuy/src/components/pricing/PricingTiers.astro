@@ -1,0 +1,187 @@
+---
+const pricingPlans = [
+  {
+    name: "Individual",
+    monthlyPrice: "149",
+    annualPrice: "100",
+    description: "For freelancers and independent designers",
+    features: [
+      "Unlimited access to all design assets",
+      "Good plan for a freelancer and solo designer",
+      "Support for basic web development",
+      "Work on up to 3 product design projects",
+      "Only one user per account",
+      "Commercial use",
+    ],
+    unavailableFeatures: [
+      "Licensed for teams, startups, agencies and corporates",
+      "Several users per account",
+      "Commercial use",
+    ],
+  },
+  {
+    name: "Startup",
+    monthlyPrice: "249",
+    annualPrice: "300",
+    description: " Best choice for any size team or agency",
+    features: [
+      "Everything included in the Individual plan",
+      "Licensed for teams, startups, agencies and corporates",
+      "Several users per account",
+      "Commercial use",
+    ],
+    unavailableFeatures: [
+      "Missing advanced 3D design tools",
+      "Without premium system collaboration",
+      "Standard support",
+    ],
+  },
+  {
+    name: "Company",
+    monthlyPrice: "50",
+    annualPrice: "600",
+    description: "For businesses aiming to lead in innovation.",
+    features: [
+      "Everything included in the Individual plan",
+      "Everything included in the Startup plan",
+      "Unlimited licensed for teams, startups, agencies and corporates",
+      "Unlimited users per account",
+      "Commercial use",
+    ],
+    unavailableFeatures: [],
+  },
+];
+---
+
+<section x-data="{annual: false}">
+  <div
+    class="flex flex-col gap-12 h-full justify-between p-4 text-center pt-20">
+    <div class="max-w-xl mx-auto">
+      <h1
+        class="text-lg text-neutral-600 font-mono tracking-tight text-balance">
+        Become a member today and unlock unlimited access.
+      </h1>
+      <p class="text-sm text-balance text-neutral-500">
+        Enroll in our membership program today at a discounted rate and enjoy
+        full access to our incredible lineup of products.
+      </p>
+      <div class="max-w-sm mx-auto">
+        <div
+          class="overflow-hidden inline-flex mt-6 z-0 h-14 rounded-lg p-0.5 w-full bg-white">
+          <button
+            class="text-xs text-black w-full block font-medium px-8 py-2 transition rounded-lg border border-transparent"
+            @click="annual = false"
+            :class="annual == false ? 'bg-neutral-100 border text-black ' : ''"
+            type="button"
+            >Monthly</button
+          >
+          <button
+            class="text-xs text-black w-full block font-medium px-8 py-2 transition rounded-lg border border-transparent"
+            @click="annual = true"
+            :class="annual == true ? 'bg-neutral-100 border text-black' : ''"
+            type="button"
+            >Annual ( save 25% )</button
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid lg:grid-cols-3 gap-2 py-2">
+    {
+      pricingPlans.map((plan) => (
+        <>
+          <div class="flex flex-col h-full bg-white p-4 rounded-xl">
+            <div class=" h-full flex flex-col ">
+              <div>
+                <div>
+                  <div class="flex justify-between items-center">
+                    <h3
+                      id="tier-essential"
+                      class="text-lg text-neutral-600 font-mono tracking-tight uppercase">
+                      {plan.name}
+                    </h3>
+                    <p class="flex  items-baseline gap-x-1 text-lg text-neutral-600 font-mono tracking-tight">
+                      <span>
+                        <span x-show="!annual">${plan.monthlyPrice}</span>
+                        <span x-show="annual">${plan.annualPrice}</span>
+                      </span>
+                      <span class="text-xs">
+                        /m
+                        <span
+                          x-show="annual"
+                          style="display: none;">
+                          (billed annually)
+                        </span>
+                      </span>
+                    </p>
+                  </div>
+                  <p class="mt-4 text-sm  text-neutral-500">
+                    {plan.description}
+                  </p>
+                </div>
+                <div class="mt-8">
+                  <button
+                    type="button"
+                    title="link to your page"
+                    aria-label="your label"
+                    class="relative group overflow-hidden pl-4 font-mono h-14 flex space-x-6 items-center bg-orange-500 hover:bg-black duration-300 rounded-xl w-full justify-between">
+                    <span class="relative uppercase text-xs text-white">
+                      Add to cart
+                    </span>
+                    <div
+                      aria-hidden="true"
+                      class="w-12 text-white transition duration-300 -translate-y-7 group-hover:translate-y-7">
+                      <div class="h-14 flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6 m-auto fill-white">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                          />
+                        </svg>
+                      </div>
+                      <div class="h-14 flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="size-6 m-auto fill-white">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <ul class="mt-6 text-xs space-y-1 font-mono uppercase text-neutral-500">
+                {plan.features.map((feature) => (
+                  <li class="inline-flex items-start gap-3 ">
+                    <span>+</span>
+                    {feature}
+                  </li>
+                ))}
+                {plan.unavailableFeatures.map((feature) => (
+                  <li class="inline-flex items-start gap-3  opacity-60">
+                    <span>−</span> {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import HelpEntries from "@/components/helpcenter/HelpEntries.astro";
+import { getCollection } from "astro:content";
+const allEntries = await getCollection("helpcenter");
+---
+
+<BaseLayout>
+  <section>
+    <div
+      class="flex flex-col gap-12 h-full justify-between p-4 text-center py-20">
+      <div class="max-w-xl mx-auto">
+        <h1
+          class="text-lg text-neutral-600 font-mono tracking-tight text-balance">
+          Welcome to our help center, How can we help you?
+        </h1>
+        <p class="text-sm text-balance text-neutral-500">
+          Search around for answers to your questions and get the help you need.
+
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="flex flex-col gap-2">
+      {
+        allEntries.slice().map((post) => (
+          <HelpEntries
+            url={"/helpcenter/" + post.slug}
+            title={post.data.title}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+</BaseLayout>

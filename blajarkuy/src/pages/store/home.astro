@@ -1,0 +1,95 @@
+---
+import { getCollection } from "astro:content";
+// Blog
+const allPosts = await getCollection("posts");
+import LatestEntries from "@/components/blog/LatestEntries.astro";
+// Store
+const allProducts = await getCollection("store");
+import StoreEntries from "@/components/store/StoreEntries.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroTwo from "@/components/landing/HeroTwo.astro";
+import CtaTwo from "@/components/cta/CtaTwo.astro";
+---
+
+<BaseLayout>
+  <HeroTwo />
+  <section>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+      {
+        allProducts.map((post) => (
+          <StoreEntries
+            url={"/store/" + post.slug}
+            title={post.data.title}
+            price={post.data.price}
+            type={post.data.type}
+            alt={post.data.title}
+            alt={post.data.title}
+            thumbnail={post.data.thumbnail.url}
+          />
+        ))
+      }
+    </div>
+  </section>
+  <CtaTwo />
+
+  <section>
+    <div class="py-2 space-y-2">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
+        {
+          allPosts.slice(0, 3).map((post) => (
+            <LatestEntries
+              url={"/blog/posts/" + post.slug}
+              title={post.data.title}
+              description={post.data.description}
+              alt={post.data.title}
+              pubDate={post.data.pubDate.toString().slice(0, 10)}
+              author={post.data.author}
+              image={post.data.image.url}
+            />
+          ))
+        }
+      </div>
+      <a
+        href="/blog/home"
+        title="link to your page"
+        aria-label="your label"
+        class="relative group overflow-hidden pl-4 justify-between text-xs text-orange-600 font-mono h-14 flex space-x-6 items-center bg-white hover:bg-neutral-200 hover:text-orange-600 duration-300 rounded-xl">
+        <span class="relative uppercase text-xs">Read all articles</span>
+        <div
+          aria-hidden="true"
+          class="w-12 transition duration-300 -translate-y-7 group-hover:translate-y-7">
+          <div class="h-14 flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 m-auto fill-white">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+              ></path>
+            </svg>
+          </div>
+          <div class="h-14 flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 m-auto fill-white">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

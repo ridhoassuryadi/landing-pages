@@ -1,0 +1,102 @@
+<section>
+  <div class="w-full px-8 pt-12 mx-auto md:px-12 lg:px-32 max-w-7xl lg:py-24">
+    <div class="relative overflow-hidden">
+      <div>
+        <span class="text-xs font-bold tracking-wide uppercase text-purple-500"
+          >Our Customers Love Us</span
+        ><h2 class="mt-8 text-4xl font-semibold tracking-tight text-purple-900">
+          Empowering design agencies, freelance practitioners, universities, and
+          companies from diverse industries with the revolutionary potential of
+          digital currencies and blockchain.
+        </h2>
+      </div><div
+        class="container flex flex-col overflow-hidden md:flex-row"
+        x-data="{ testimonialActive: 2 }">
+        <div class="relative flex flex-col h-full text-left">
+          <div class="relative z-10 h-full">
+            <div class="max-w-xl mt-8 text-base text-gray-500">
+              <div
+                x-show.immediate="testimonialActive === 1"
+                style="display: none;">
+                <p
+                  style="display: none;"
+                  x-show.transition="testimonialActive == 1">
+                  " We were initially hesitant about integrating blockchain
+                  technology into our existing systems, fearing the complexity
+                  of the process."
+                </p><div class="flex items-center mt-8">
+                  <a
+                    class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold transition-all bg-white border border-gray-300 rounded-lg text-purple-600 hover:text-purple-500"
+                    title="link to your page"
+        aria-label="your label" href="/customers/customers-details"
+                    type="a">Read Macca's case &nbsp; →</a
+                  >
+                </div>
+              </div><div
+                x-show.immediate="testimonialActive === 2"
+                style="display: none;">
+                <p
+                  x-show.transition="testimonialActive == 2"
+                  style="display: none;">
+                  "Being in the financial industry, we were always looking for
+                  ways to enhance our transactions' security and efficiency."
+                </p><div class="flex items-center mt-8">
+                  <a
+                    class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold transition-all bg-white border border-gray-300 rounded-lg text-purple-600 hover:text-purple-500"
+                    title="link to your page"
+        aria-label="your label" href="/customers/customers-details"
+                    type="a">Read Walter's case &nbsp; →</a
+                  >
+                </div>
+              </div><div x-show.immediate="testimonialActive === 3">
+                <p x-show.transition="testimonialActive == 3">
+                  " Implementing Semplice's blockchain technology has been a
+                  game-changer for our supply chain management."
+                </p><div class="flex items-center mt-8">
+                  <a
+                    class="flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold transition-all bg-white border border-gray-300 rounded-lg text-purple-600 hover:text-purple-500"
+                    title="link to your page"
+        aria-label="your label" href="/customers/customers-details"
+                    type="a">Read Pep's case &nbsp; →</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center mt-6 lg:my-4">
+              <button
+                class="inline-block w-12 h-12 mx-2 font-bold text-center bg-white rounded-full shadow-xs opacity-25 focus:outline-none focus:ring-2 focus:ring-purple-900 ring-offset-white"
+                :class="{'h-12 w-12 opacity-25 bg-white ': testimonialActive != 1, 'opacity-100 bg-white text-white': testimonialActive == 1 }"
+                @click.prevent="testimonialActive = 1"
+                ><img
+                  alt="#"
+                  src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                  class="inline-block w-12 h-12 rounded-full"
+                /></button
+              >
+              <button
+                class="inline-block w-12 h-12 mx-2 font-bold text-center bg-white rounded-full shadow-xs opacity-25 focus:outline-none focus:ring-2 focus:ring-purple-900 ring-offset-white"
+                :class="{'h-12 w-12 opacity-25 bg-white ': testimonialActive != 2, 'opacity-100 bg-white ': testimonialActive == 2 }"
+                @click.prevent="testimonialActive = 2"
+                ><img
+                  alt="@dqmonn on twitter"
+                  src="https://images.unsplash.com/photo-1546458904-143d1674858d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1131&q=80"
+                  class="inline-block w-12 h-12 rounded-full"
+                /></button
+              >
+              <button
+                class="inline-block mx-2 font-bold text-center text-white bg-white rounded-full shadow-xs opacity-100 focus:outline-none focus:ring-2 focus:ring-purple-900 ring-offset-white"
+                :class="{'h-12 w-12 opacity-25 bg-white ': testimonialActive != 3, 'opacity-100 bg-white text-white': testimonialActive == 3 }"
+                @click.prevent="testimonialActive = 3"
+                ><img
+                  alt="@heychazza on twitter"
+                  src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                  class="inline-block w-12 h-12 rounded-full"
+                /></button
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

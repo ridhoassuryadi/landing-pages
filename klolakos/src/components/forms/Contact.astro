@@ -1,0 +1,138 @@
+<section>
+  <div class="flex items-center justify-center h-svh">
+    <div class="w-full max-w-md px-8 mx-auto md:max-w-sm md:px-0 md:w-96">
+      <h2 class="text-4xl font-medium tracking-tighter text-purple-900">
+        Contact us
+      </h2>
+
+      <form class="mt-12">
+        <div class="space-y-6">
+          <div class="flex flex-row w-full gap-3">
+            <div class="w-full">
+              <label
+                for="first_name"
+                class="block mb-3 text-sm font-medium text-gray-700"
+                >First name</label
+              >
+              <input
+                id="first_name"
+                type="text"
+                name="first_name"
+                autocomplete="given-name"
+                required=""
+                class="block w-full h-10 px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+              />
+            </div>
+            <div class="w-full">
+              <label
+                for="last_name"
+                class="block mb-3 text-sm font-medium text-gray-700"
+                >Last name</label
+              >
+              <input
+                id="last_name"
+                type="text"
+                name="last_name"
+                autocomplete="family-name"
+                required=""
+                class="block w-full h-10 px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="company"
+              class="block mb-3 text-sm font-medium text-gray-600"
+              >Company</label
+            >
+            <input
+              id="company"
+              type="text"
+              name="company"
+              placeholder="Type here..."
+              class="block w-full h-10 px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+            />
+          </div>
+          <div class="col-span-full">
+            <label
+              for="email"
+              class="block mb-3 text-sm font-medium text-gray-600"
+              >Email</label
+            >
+            <input
+              id="email"
+              type="email"
+              name="email"
+              aria-required="true"
+              placeholder="Type email here..."
+              class="block w-full h-10 px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+            />
+          </div>
+          <div class="col-span-full">
+            <label
+              for="phone-number"
+              class="block mb-3 text-sm font-medium text-gray-600"
+              >Phone Number</label
+            >
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 flex items-center">
+                <label
+                  for="country"
+                  class="sr-only"
+                  >Country</label
+                >
+                <select
+                  id="country"
+                  name="country"
+                  class="h-full py-0 pl-3 pr-8 text-sm text-gray-500 bg-transparent border-transparent rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                  <option>US</option>
+                  <option>CA</option>
+                  <option>EU</option>
+                </select>
+              </div>
+              <input
+                id="phone-number"
+                type="text"
+                name="phone-number"
+                autocomplete="tel"
+                aria-required="true"
+                placeholder="+1 (555) 987-6543"
+                class="block w-full h-10 px-3 py-2 pl-20 text-sm placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none text-purple-500 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-purple-500 sm:text-sm"
+              />
+            </div>
+          </div>
+          <div class="flex items-start">
+            <input
+              id="remember-me"
+              name="remember-me"
+              type="checkbox"
+              class="size-4 rounded text-purple-500 focus:ring-purple-500 border-purple-500"
+            />
+            <label
+              for="remember-me"
+              class="block ml-2 text-sm font-medium leading-tight text-purple-900">
+              Creating an account means you’re okay with our
+              <a
+                href="/terms"
+                class="text-purple-500 hover:text-purple-400"
+                >Terms of Service,</a
+              >
+              <a
+                href="/privacy"
+                class="text-purple-500 hover:text-purple-400"
+                >Privacy Policy</a
+              >, and our default.
+            </label>
+          </div>
+          <div class="col-span-full">
+            <button
+              type="submit"
+              class="flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-semibold text-white transition-all rounded-lg bg-gradient-to-b from-purple-500 hover:to-purple-700 to-purple-600"
+              >Submit your message</button
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

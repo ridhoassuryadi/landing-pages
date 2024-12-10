@@ -1,0 +1,76 @@
+<section>
+  <div class="flex items-center justify-center h-screen">
+    <div class="w-full max-w-md px-8 mx-auto md:max-w-sm md:px-0 md:w-96">
+      <h2 class="text-4xl font-medium tracking-tighter text-purple-900">
+        Reset your password
+      </h2>
+
+      <form class="mt-12">
+        <div class="space-y-6">
+          <div class="col-span-full">
+            <label
+              for="email"
+              class="block mb-3 text-sm font-medium text-gray-600"
+              >Your email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="email@example.com"
+              class="block w-full px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none focus:outline-none focus:bg-white focus:border-purple-500 focus:ring-purple-500 sm:text-sm text-purple-500"
+            />
+          </div>
+          <div class="col-span-full">
+            <label
+              for="password"
+              class="block mb-3 text-sm font-medium text-gray-600"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Type password here..."
+              class="block w-full px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none focus:outline-none focus:bg-white focus:border-purple-500 focus:ring-purple-500 sm:text-sm text-purple-500"
+            />
+          </div>
+          <div class="col-span-full">
+            <label
+              for="confirm_password"
+              class="block mb-3 text-sm font-medium text-gray-600"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              placeholder="Type password here..."
+              class="block w-full px-3 py-2 placeholder-gray-500 bg-white border border-transparent rounded-md appearance-none focus:outline-none focus:bg-white focus:border-purple-500 focus:ring-purple-500 sm:text-sm text-purple-500"
+            />
+          </div>
+          <div class="col-span-full">
+            <button
+              type="submit"
+              class="flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-semibold text-white transition-all rounded-lg bg-gradient-to-b from-purple-500 hover:to-purple-700 to-purple-600">
+              Reset password
+            </button>
+          </div>
+          <div>
+            <p class="text-sm font-medium leading-tight text-purple-900">
+              Already have a password?
+              <a
+                href="/login"
+                class="ml-3 text-purple-500 hover:text-purple-400"
+                title="Log in instead"
+                aria-label="Log in instead">
+                Log in instead
+              </a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
